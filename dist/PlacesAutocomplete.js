@@ -134,6 +134,9 @@ var PlacesAutocomplete = function (_Component) {
   }, {
     key: 'clearAutocomplete',
     value: function clearAutocomplete() {
+      if (this.props.alwaysRenderSuggestion) {
+        return;
+      }
       this.setState({ results: [] });
     }
   }, {

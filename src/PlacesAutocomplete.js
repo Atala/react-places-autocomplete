@@ -77,7 +77,7 @@ class PlacesAutocomplete extends Component {
     const { value } = this.props.inputProps
 
     if (value.length) {
-      
+
       // Google Results
       this.autocompleteService.getPlacePredictions({
         ...this.props.options,
@@ -88,6 +88,9 @@ class PlacesAutocomplete extends Component {
   }
 
   clearAutocomplete() {
+    if (this.props.alwaysRenderSuggestion) {
+      return;
+    }
     this.setState({ results: [] })
   }
 

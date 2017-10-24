@@ -214,6 +214,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'clearAutocomplete',
 	    value: function clearAutocomplete() {
+	      if (this.props.alwaysRenderSuggestion) {
+	        return;
+	      }
 	      this.setState({ results: [] });
 	    }
 	  }, {
